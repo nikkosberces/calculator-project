@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  margin: 10px 565px;
+  background-color: #a09b9b;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(58, 57, 57, 0.3);
+  border-radius: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  background: linear-gradient(to right, #371e7c, #604c94);
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  margin-top: 10px;
+}
+
+.grid-container button {
+  cursor: pointer;
+  font-size: 32px;
+  border: 2px solid #fff;
+  margin: 5px;
+  outline: none;
+  background-color: rgba(156, 154, 154, 0.75);
+  border-radius: 20px;
+}
+
+.grid-container button:hover {
+  background-color: rgba(112, 109, 109, 0.75);
+  font-size: 24px;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border-top: 10px;
+  height: 130px;
+  border: 1px solid #fff;
+}
+
+.output .previous-output {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 24px;
+}
+
+.output .current-output {
+  color: #fff;
+  font-size: 32px;
+}
