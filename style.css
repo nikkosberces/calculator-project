@@ -6,7 +6,7 @@
 }
 
 header {
-  margin: 10px 565px;
+  margin: 10px 500px;
   background-color: #a09b9b;
   color: black;
   padding: 10px;
@@ -16,6 +16,7 @@ header {
 }
 
 h1 {
+  text-align: center;
   font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -79,6 +80,7 @@ body {
   border-top: 10px;
   height: 130px;
   border: 1px solid #fff;
+  color: aliceblue;
 }
 
 .output .previous-output {
