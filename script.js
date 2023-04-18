@@ -1,18 +1,21 @@
-const numberButtons = document.querySelectorAll(".data-number");
+const numberBtn = document.querySelectorAll(".is-num");
 const currentDisplay = document.querySelector(".current-output");
-const clearButtons = document.querySelector(".data-clear-all");
+const clearBtn = document.querySelector(".is-clear");
+const deleteBtn = document.querySelector(".is-delete");
 
-let currentOutput = "";
-let previousOutput = "";
+currentOutput = "";
+previousOutput = "";
 
-numberButtons.forEach((button) => {
+numberBtn.forEach((button) => {
   button.addEventListener("click", (event) => {
     currentOutput += event.target.textContent;
+
     currentDisplay.textContent = currentOutput;
   });
 });
 
-clearButtons.addEventListener("click", () => {
+clearBtn.addEventListener("click", () => {
   currentOutput = "0";
+
   currentDisplay.textContent = currentOutput;
 });
