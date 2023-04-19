@@ -5,6 +5,7 @@ const clearBtn = document.querySelector(".is-clear");
 const previousDisplay = document.querySelector(".previous-output");
 const equalBtn = document.querySelector(".is-equals");
 const deleteBtn = document.querySelector(".is-delete");
+const decimalBtn = document.querySelector(".is-decimal");
 
 let currentInput = "";
 let previousInput = "";
@@ -45,8 +46,8 @@ function appendNumber(number) {
 
 function compute() {
   let total = 0;
-  const previousNumber = parseInt(previousInput);
-  const currentNumber = parseInt(currentInput);
+  const previousNumber = parseFloat(previousInput);
+  const currentNumber = parseFloat(currentInput);
 
   switch (operator) {
     case "+":
@@ -68,6 +69,10 @@ function compute() {
   currentInput = total;
   previousInput = "";
   operator = undefined;
+}
+
+function del() {
+  currentInput = currentInput.slice(0, -1);
 }
 
 numberBtn.forEach((button) => {
@@ -98,8 +103,14 @@ equalBtn.addEventListener("click", () => {
 });
 
 deleteBtn.addEventListener("click", () => {
-  let currentOutput = currentDisplay.textContent;
-  let newOutput = currentOutput.slice(0, -1);
+  del();
+  updateDisplay();
+});
 
-  currentDisplay.textContent = newOutput;
+decimalBtn.addEventListener("click", () => {
+  if (!currentInput.includes(".")) {
+    currentInput += ".";
+  }
+
+  updateDisplay();
 });
